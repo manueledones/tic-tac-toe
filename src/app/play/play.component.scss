@@ -1,0 +1,54 @@
+  .center{
+    display:grid;
+    place-items: center;
+    height: 100%;
+  
+    & > div {
+      height: 400px;
+      width: 400px;
+    }
+  }
+  
+  .container {
+    height: 100%;
+    display: grid;
+    grid-template:  " a   b   c" 1fr
+                    " d   e   f" 1fr
+                    " g   h   i" 1fr
+                  /  1fr 1fr 1fr;
+  }
+  
+  .game-over {
+    filter: blur(5px);
+  }
+  
+  .cell {
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 60px; // TODO is there a way to set it dependent of its container dimensions?
+  
+    &.right-border {
+      border-right: 3px solid gray;
+    }
+  
+    &.bottom-border {
+      border-bottom: 3px solid gray;
+    }
+  
+    &::after, &::before {
+      display: grid;
+      place-items: center;
+      height: 100%;
+    }
+  }
+  
+  .winner-message {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 30px;
+  }

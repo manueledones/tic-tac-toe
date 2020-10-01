@@ -1,0 +1,37 @@
+:host {
+  display: grid;
+  place-items: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  padding: 10px;
+}
+
+.container {
+  perspective: 500px;
+}
+
+.avatars-container {  
+  display: grid;
+  grid-template: "    a           b           c           d"         1fr
+  /               min-content min-content min-content min-content;
+  grid-gap: 10px;
+  font-size: 50px;
+  cursor: pointer;
+
+  border-radius: 10px;
+  box-shadow: -7px 7px 14px 2px rgba(0,0,0,0.51);
+  transform: rotateY(14deg);
+
+  div:hover:not(.disabled) {
+    transform: scale(1.5);
+  }
+
+  div.disabled {
+    filter: blur(2px) grayscale(90%);
+    cursor: not-allowed;
+  }
+}

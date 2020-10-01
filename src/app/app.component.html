@@ -1,26 +1,12 @@
-<div class="center">
-  <div>
+<app-select-player *ngIf="!player1"
+                   [player]="'1'"
+                   (selectedAvatar)="player1 = $event"></app-select-player>
 
-    <div *ngIf="winner"
-         class="winner-message">
-      <div>
-        The winner is {{winner | emoji}}
-      </div>
+<app-select-player *ngIf="player1 && !player2"
+                   [player]="'2'"
+                   [disabledAvatar]="player1"
+                   (selectedAvatar)="player2 = $event"></app-select-player>
 
-      <button (click)="startNewGame()">New Game</button>
-    </div>
-
-    <span>
-      Player {{player | emoji}}
-    </span>
-    <div class="container"
-         [class.game-over]="winner">
-      <div *ngFor="let x of state; let i = index"
-           class="cell"
-           [class]="x.sign"
-           [class.right-border]="[0, 1, 3, 4, 6, 7].includes(i)"
-           [class.bottom-border]="[0, 1, 2, 3, 4, 5].includes(i)"
-           (click)="!winner && !x.sign && move(i)"></div>
-    </div>
-  </div>
-</div>
+<app-play *ngIf="player1 && player2"
+          [player1]="player1"
+          [player2]="player2"></app-play>
