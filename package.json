@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:github": "ng build --prod --output-path docs --base-href /tic-tac-toe/"
+    "build:github": "ng build --prod --output-path docs --base-href /tic-tac-toe/ && cp docs/index.html 404.html"
   },
   "private": true,
   "dependencies": {
