@@ -34,8 +34,7 @@ export class SelectPlayerComponent {
     '⛵',
     '🍭',
     '🚀',
-    '🚜',
-    '🌞']
+    '🚜']
 
   constructor() { }
 

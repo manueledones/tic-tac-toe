@@ -5,20 +5,17 @@ import { EmojiPipe } from './emoji.pipe';
 import { PlayComponent } from './play/play.component';
 import { SelectPlayerComponent } from './select-player/select-player.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
-    EmojiPipe,
     SelectPlayerComponent,
     PlayComponent,
-  ],
-  providers: [
-    EmojiPipe
+    EmojiPipe,
   ],
   imports: [
     BrowserModule
   ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,14 +1,5 @@
 import { Component, HostBinding, Input } from '@angular/core';
-
-
-export type X = 'X';
-export type O = 'O';
-export type Sign = X | O | undefined;
-export type Player = X | O;
-export type Winner = Player | 'XO';
-export interface Cell {
-  sign: Sign
-}
+import { Cell, Player, Winner } from '../datamodel';
 
 @Component({
   selector: 'app-play',
@@ -20,8 +11,6 @@ export class PlayComponent {
   @Input() player1!: string;
   @Input() player2!: string;
   @HostBinding("style.--player1")
-  private player11?: string;
-
 
   boardSize = 3;
   boardDimension = this.boardSize * this.boardSize;
@@ -40,10 +29,6 @@ export class PlayComponent {
 
   constructor() {
     this.startNewGame();
-  }
-
-  ngOnInit() {
-    this.player11 = 'J';
   }
 
   startNewGame(): void {

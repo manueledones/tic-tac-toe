@@ -1,11 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Player, Sign, Winner } from './play/play.component';
+import { Player, Sign, Winner } from './datamodel';
 
 @Pipe({
   name: 'emoji'
 })
 export class EmojiPipe implements PipeTransform {
-
   player1 = '🐁'
   player2 = '🐈';
 
