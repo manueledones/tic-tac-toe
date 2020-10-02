@@ -1,4 +1,4 @@
-import { Component, HostBinding, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Cell, Player, Winner } from '../datamodel';
 
 @Component({
@@ -10,7 +10,6 @@ export class PlayComponent {
 
   @Input() player1!: string;
   @Input() player2!: string;
-  @HostBinding("style.--player1")
 
   boardSize = 3;
   boardDimension = this.boardSize * this.boardSize;
@@ -19,13 +18,14 @@ export class PlayComponent {
   winner: Winner | undefined;
 
   possibleWinnerPositionsIndexes = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [6, 4, 2]];
+    [0, 1, 2],  // 1° row
+    [3, 4, 5],  // 2° row
+    [6, 7, 8],  // 3° row
+    [0, 3, 6],  // 1° col
+    [1, 4, 7],  // 2° col
+    [2, 5, 8],  // 3° col
+    [0, 4, 8],  // 1° diag
+    [6, 4, 2]]; // 2° diag
 
   constructor() {
     this.startNewGame();
