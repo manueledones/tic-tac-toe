@@ -15,15 +15,18 @@
       </path>
     </svg></a>
 </div>
-<app-select-player *ngIf="!player1"
-                   [player]="'1'"
-                   (selectedAvatar)="player1 = $event"></app-select-player>
 
-<app-select-player *ngIf="player1 && !player2"
-                   [player]="'2'"
-                   [disabledAvatar]="player1"
-                   (selectedAvatar)="player2 = $event"></app-select-player>
+<div class="container">
+  <app-select-player *ngIf="!player1"
+                     [player]="'1'"
+                     (selectedAvatar)="player1 = $event"></app-select-player>
 
-<app-play *ngIf="player1 && player2"
-          [player1]="player1"
-          [player2]="player2"></app-play>
+  <app-select-player *ngIf="player1 && !player2"
+                     [player]="'2'"
+                     [disabledAvatar]="player1"
+                     (selectedAvatar)="player2 = $event"></app-select-player>
+
+  <app-play *ngIf="player1 && player2"
+            [player1]="player1"
+            [player2]="player2"></app-play>
+</div>
